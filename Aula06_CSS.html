@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>HTML/CSS</title>
+
+		
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+		<link rel="stylesheet" href="reveal/css/theme/gdicool.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<!-- light editor<link rel="stylesheet" href="lib/css/light.css">-->
+		<!-- dark editor--><link rel="stylesheet" href="reveal/lib/css/dark.css">
+
+		<!-- If use the PDF print sheet so students can print slides-->
+		
+		<link rel="stylesheet" href="reveal/css/print/pdf.css" type="text/css" media="print">
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide-->
+			<div class="slides">
+        
+        
+			  <!-- Opening slide -->
+        <section>
+          <h3>Introdução HTML e CSS</h3>
+        </section>
+        
+        
+        <!-- Role of HTML v. CSS-->
+         <section>
+          <h3>Anatomia de um website</h3>
+          <div class = "blue"> Seu conteúdo</div>
+          <div><span class = "blue">+ HTML: </span>Estrutura</div>
+          <div><span class = "blue">+ CSS: </span>Apresentação</div>
+          <div class = "blue">= Seu Website</div>
+          <p>Um website é uma forma de apresentar seu conteúdo para o mundo, usando HTML e CSS para mostrar o conteúdo e fazer parecer BOM.</p>
+        </section>
+
+        <!-- What is CSS-->
+        <section>
+          <h3>CSS: O que é?</h3>
+          <p>CSS = <span class="green">C</span>ascading <span class="green">S</span>tyle <span class="green">S</span>heets</p>
+          <p>CSS é uma "folha de estilo" que permite que você configure os elementos na sua página.</p>
+          <p>CSS trabalha junto com HTML, mas não é HTML em si.</p>
+        </section>
+        
+        <section>
+          <h3>CSS: O que ele pode fazer?</h3>
+          <p>Textos coloridos, posicionamento, tamanho</p>
+          <img width="85%" src = "images/homepage-view.png">
+        </section>
+        
+        <section>
+          <h3>CSS: Como ele se parece?</h3>
+          <img height="50%" src = "images/homepage-css.png">
+        </section>
+        
+        <!-- The CSS Rule-->
+        <section>
+        	<h3>Regras de CSS</h3>
+        	<img src="images/cssrule.png" alt="The CSS Rule" style="border: none; box-shadow: none;"/>
+        </section>
+        <section>
+          <h3>Regras de CSS</h3>
+<pre><code class = "html">
+selector {
+  property: value;
+}
+</code></pre>
+          <div class = "left-align">
+            <p>Um bloco de CSS é uma regra.</p>
+            <p>A regra começa com um "selector".</p>
+            <p>Ele define propriedades e valores.</p>
+            <p>O par propriedade-valor é uma declaração.</p>
+          </div>
+        </section>
+        
+        <!-- CSS Syntax -->
+        <section>
+          <h3>Sintaxe CSS </h3>
+          <div class = "left-align">
+            <p>Declarações: Propriedade e valor do estilo que você planeja usar em um elemento de HTML. </p>
+          <p>A declaração termina com um ponto e vírgula</p>
+          <p>As declarações são agrupadas por chaves.</p>
+          </div>
+          
+<pre><code class = "html">
+selector {
+  property: value;
+  property: value;
+  property: value;
+}
+</code></pre>
+        </section>
+  <!-- Connecting HTML to CSS-->
+        <section>
+          <h3>Vinculando o CSS ao HTML</h3>
+          <p class = "green">3 formas</p>
+          <p>"Inline"</p>
+          <p>"Embedded"</p>
+          <p>"External"</p>
+        </section>
+      
+        <!-- Inline -->
+        <section>
+          <h3>Vinculando o CSS ao HTML: Inline</h3>
+<pre><code class = "html">
+  &lt;p style="color:red">Some text.&lt;/p>
+</code></pre>
+          <p>Usa o atributo "style" do HTML.</p>
+          <p>Para projetos grandes fica mais difícil de usar</p>
+          <p>Não é o preferencial.</p>
+        </section>
+        
+        <!-- Embedded -->
+        <section>
+          <h3>Vinculando o CSS ao HTML: Embedded</h3>
+<pre><code class = "html">
+&lt;head>
+  &lt;style type="text/css">
+    p {
+      color: blue;
+      font-size: 12px;
+    }
+  &lt;/style>
+&lt;/head>
+</code></pre>
+          <p>Dentro do elemento &lt;head> </p>
+          <p>Usa a tag &lt;style> .</p>
+          <p>Só pode ser usado em um arquivo html</p>
+        </section>
+        
+        <!-- External-->
+        <section>
+          <h3>Vinculando o CSS ao HTML: External</h3>
+<pre><code class = "html">
+&lt;head>
+  &lt;link rel="stylesheet" type="text/css" href="style.css">
+&lt;/head>
+</code></pre>
+          <p>Compartilha recursos com várias páginas.</p>
+          <p>Reduz o tamanho do arquivo e largura de banda</p>
+          <p>Fácil manutenção em projetos grandes.</p>
+          <p>Usar este modo, preferencialmente!</p>
+        </section>
+      
+        <!-- Selectors elements-->
+        <section>
+			  <h3>Selector: Elemento</h3>
+<pre><code class = "html">
+p {
+  property: value;
+}
+</code></pre>
+      <p>Seleciona todos os parágrafos.</p>
+<pre><code class = "html">
+img {
+  property: value;
+}
+</code></pre>
+        <p>Seleciona todas as imagens.</p>
+        </section>
+          <!-- ID vs Class-->
+        <section>
+        <h3>IDs X Classes</h3>
+        <div class = "left-align">
+          <span class = "yellow">ID</span> -- Deve ser aplicado a apenas um elemento na página, por exemplo: A página tem apenas um "footer".
+          <p>O símbolo "#" indica "isto é um ID."</p>
+        </div>
+        <div class = "left-align">
+          <span class = "yellow">Class</span> -- Vários elementos podem ter a mesma classe. Por exemplo, podem haver vários elementos da classe "warning" na página.
+          <p>O "." é como o CC identifica "este é o nome da classe."</p>
+        </div>
+      </section>  
+        <!-- Selectors ID-->
+        <section>
+			    <h3>Selector: ID</h3>
+<pre><code class = "html">
+#footer {
+  property: value;
+}
+</code></pre>
+          <p>Seleciona todos elementos com id "footer".</p>
+          
+<pre><code class = "html">
+&lt;p id="footer">Copyright 2011&lt;/p>
+</code></pre>
+         <p>HTML associado.</p>
+			  </section>
+        
+        <!-- Selectors Class-->
+        <section>
+			    <h3>Selector: Classe</h3>
+<pre><code class = "html">
+.warning {
+  color: red;
+}
+</code></pre>
+          <p>Seleciona todos os elementos identificados com a classe "warning".</p>
+
+<pre><code class = "html">
+&lt;p class="warning">Corra!&lt;/p>
+</code></pre>
+         <p>HTML associado.</p>
+			  </section>
+        
+      
+      
+        <!-- Selector position-->
+        <section>
+        <h3>Selector: Posição</h3>
+<pre><code class = "html">
+p em {
+  color: yellow;
+}
+</code></pre>
+       <p>Seleciona todos os elementos que estão dentro de um parágrafo</p>
+<pre><code class = "html">
+&lt;p>Isto é &lt;em>importante.&lt;/em>&lt;/p>
+</code></pre>
+        <p>HTML associado.</p>
+      </section>
+        
+        <!-- Multiple values -->
+        <section>
+        <h3>Propriedades</h3>
+        <p>Cada propriedade pode ter um valor ou mais (separados por vírgula).</p>
+<pre><code class = "html">
+p{
+  color: white;
+  background-color: red;
+  font-family: Arial, sans-serif;
+}
+</code></pre>
+      </section>
+        
+       
+        <!-- Properties-->
+        <section>
+          <h3>Propriedades CSS</h3>
+          <p>Muitas das properiedades CSS são auto-explicativas:</p>
+          <ul>
+            <li>background-color</li>
+            <li>font-family</li>
+            <li>font-size</li>
+            <li>color</li>
+            <li>width</li>
+            <li>height</li>
+          </ul>
+          <p><a href = "https://developer.mozilla.org/en-US/docs/CSS/CSS_Reference">Lista de todas as propriedades CSS</a></p>
+        </section>
+        <!-- Padding -->
+        <section>
+          <h3>Padding</h3>
+          <p>Espaçamento entre a borda e o conteúdo</p>
+          <img src ="images/box-model.png"/>
+        </section>
+        <section>
+          <h3>Padding</h3>
+          <p>Espaçamento entre a borda e o conteúdo</p>
+         
+          <img src ="images/box-model-padding.png"/>
+        </section>
+        
+        <section>
+          <h3>Padding</h3>
+          15 pixels em todos os lados
+<pre><code class ="html">
+padding: 15px;
+</code></pre>
+          10 pixels só no topo
+<pre><code class ="html">
+padding-top: 10px;
+</code></pre>
+          10 no topo, 5 a direita, 3 em baixo, 5 a esquerda
+<pre><code class ="html">
+padding: 10px 5px 3px 5px;
+</code></pre>  
+        </section>
+       
+        <section>
+          <h3>Padding</h3>
+          <p>4 valores<p>
+<pre><code class = "html">
+  padding: top right bottom left;
+</code></pre>
+          <p>Dois valores</p>
+<pre><code class = "html">
+  padding: top/bottom right/left;
+</code></pre>
+          <p>Um valor</p>
+<pre><code class = "html">
+  padding: all;
+</code></pre>
+        </section>
+       
+        <section>
+          <h3>Padding</h3>
+<pre><code class ="html">
+  padding: 10px 20px 30px 40px;
+</code></pre>
+        <img src ="images/box-model-padding2.png"/>
+        </section>
+       
+        <!-- Border-->
+        <section>
+          <h3>Border</h3>
+          <p>Contorno em volta de um box</p>
+          <img src ="images/box-model-border.png">
+        </section>
+        
+        <section>
+          <h3>Border</h3>
+          <p>Borda sólida vermelha</p>
+<pre><code class = "html">
+  border: 1px solid #ff0000;
+</code></pre>
+          <p>Linha pontilhada preta no topo </p>
+<pre><code class ="html">
+  border-top: 4px dotted #000000;
+</code></pre>
+          <p>Dois tipos diferentes de linha</p>
+<pre><code class ="html">
+  border-top: 1px solid #ff0000;
+  border-bottom: 4px dotted #000000;
+</code></pre>
+        </section>
+       
+        <section>
+          <h3>Border - Outras propriedades</h3>
+<pre><code class ="html">
+  border-width: 10px;
+  border-style: dashed;
+  border-color: #666666;
+</code></pre>
+          <p>Você pode determinar as propriedades separadamente ou todas de uma vez.</p>
+        </section>
+       
+        <!-- Margin -->
+        <section>
+          <h3>Margin</h3>
+          <p>Área transparente que separa um box de outros elementos.</p>
+          <img src ="images/box-model-margin.png"/>
+        </section>
+        
+        <section>
+          <h3>Margin</h3>
+          <p>15 pixels em todos os lados</p>
+<pre><code class = "html">
+  margin: 15px;
+</code></pre>
+          <p>10 no topo, 5 a direita, 3 abaixo, 5 a esquerda</p>
+<pre><code class ="html">
+  margin: 10px 5px 3px 5px;
+</code></pre>
+          <p>10 pixels no topo</p>
+<pre><code class = "html">
+  margin-top: 10px;
+</code></pre>
+        </section>
+        
+        <section>
+          <h3>Auto Margin</h3>
+          <p>Se uma margem é configurada como "auto", ela vai assumir o maior espaço possível</p>
+          <p>CENTERED</p>
+<pre><code class ="html">
+  margin: auto;
+  width: 300px;
+</code></pre>
+          <p>FLUSH-RIGHT</p>
+<pre><code class = "html">
+  margin-left: auto;
+  margin-right: 5px;
+  width: 300px;
+</code></pre>
+        </section>
+        
+     
+        <!-- Width-->
+    <section>
+      <h3>Propriedade: Width</h3>
+      <p>Configura a largura de um elemento.</p>
+      <p>Não inclui padding ou borders.</p>
+    </section>
+    <!-- height-->
+    <section>
+      <h3>Propriedade: Height</h3>
+      <p>Configura a altura de um elemento.</p>
+      <p>Não inclui padding ou borders.</p>
+    </section> 
+
+    <!-- CSS Reset -->
+    <section>
+      <h3> CSS Reset</h3>
+      <p>Os browsers possuem um padrão para interpretar as tags</p>
+      <p>Para garantir que o CSS valha, é prudente fazer um reset de CSS</p>
+
+    </section>
+    <section>
+      <h3> CSS Reset</h3>
+      <pre><code class="css">
+        * {
+             margin:0;
+             padding:0;
+             list-style:none;
+             vertical-align:baseline;
+          }
+      </code></pre>
+    <a target="_blank" href="http://meyerweb.com/eric/tools/css/reset">CSS Reset - Eric Meyer</a>
+    </section>
+
+
+    <!-- Float-->
+       
+       <!--example float-->
+       <section>
+       <h3>Float: Exemplo</h3>
+       
+       <img src="images/example-floatbq.png" alt="example float" />
+       </section>
+       <section>
+         <h3>Float</h3>
+<pre><code class ="html">
+  .float{
+    float:left;
+    width:200px;
+    background:yellow;
+  }
+</code></pre>
+        <div style ="float:left; text-align: left;width:200px;background:yellow; color:black; padding: 10px;">
+          <small>Olá! Eu sou um texto preto em uma caixa amarela.<br/>
+          Eu gosto de ficar, aqui, do lado esquerdo.</small><br/>
+        </div>
+        <div class = "left-align">Not floating element</div>
+        <div class = "left-align">Not floating element</div>
+         <div class = "left-align">Not floating element with wrapping Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+       </section>
+       
+       <section>
+       <h3>Usando o float para colocar elementos lado a lado</h3> 
+       <p>Se você tem dois elementos, você precisa configurar para que um fique a esquerda e o outro fique a direita.</p>
+       <img src="images/example-float-column.png" />
+       </section>
+        
+        <section>
+          <h2>Dúvidas?</h2>
+          <div style = "font-size:1200%; height:100%; margin-top:30%" class ="blue">?
+            <div class ="clear"></div></div>
+        </section>
+         <!-- Exercise-->
+        
+      </div>
+      
+      <footer>
+       
+      </footer>
+		</div>
+
+
+		<script src="reveal/lib/js/head.min.js"></script>
+		<script src="reveal/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
